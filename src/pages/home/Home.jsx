@@ -1,6 +1,7 @@
 import React from 'react'
 import StoriesGrid from '../../components/stories/StoriesGrid'
 import Poste from '../../components/postes/Poste'
+import CreatPost from '../../components/postes/CreatPost'
 
 const Home = () => {
 
@@ -15,6 +16,7 @@ const Home = () => {
   return (
     <div className='relative sm:w-3/5 w-full flex flex-col gap-4 pb-[200px]'>
       <StoriesGrid/>
+      <CreatPost/>
       <Poste data={data}/>
       <Poste data={data}/>
       <Poste data={data}/>

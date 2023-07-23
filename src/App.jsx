@@ -1,57 +1,70 @@
-import { useState } from 'react'
+import { useState,useContext } from 'react'
 import {Login,Regester,Home,Profile} from './pages'
 import NavBar from './components/navbare/NavBar'
 import LeftSideBar from './components/leftbar/LeftSideBar'
 import RightSideBar from './components/rightbar/RightSideBar'
-import React from 'react'
+import React,{ ReactNode }  from 'react'
 import {
   createBrowserRouter,
   RouterProvider,
   Route,
-  Outlet
+  Outlet,
+  Navigate
 } from "react-router-dom";
 
-
 function App() {
+  
+
+    
   function Layout() {
+
     return (
       <>
+      
         <NavBar/>
-        <div className='  flex justify-between items-start gap-4 p-0 mt-16 lg:px-2 md:px-4 mx-auto lg:w-[90%] w-full '>
-          <LeftSideBar/>
+        <div className='  flex justify-between items-start gap-4 p-0 mt-16 lg:px-2 md:px-4 mx-auto lg:w-[90%] w-full '> 
+        <LeftSideBar/>
           <Outlet/>
-          <RightSideBar/>
+        <RightSideBar/>
         </div>
       </> 
     );
   }
+  const currentUser = true
+  const ProtectRout = ({children,url,curent}) =>{
+    if (currentUser && !curent) {
+      console.clear()
+      console.log(' current user : ' + currentUser)
+        return children
+    } if (!currentUser && curent) {
+      return children
+    }
+    return <Navigate to={url} />
+  }
+
+
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Layout/>,
-      children:[
-        {
-          path: "/",
-          element: <Home/>,
-        },{
-          path: "/profile/:id",
-          element: <Profile/>,
-        }
-      ]
-    },{
-      path: "/regester",
-      element: <Regester/>,
+      element: (<ProtectRout url='/login' curent={false}><Layout /></ProtectRout>),
+      children: [
+        { path: "/", element: (
+        <>
+            <Home />
+        </>
+          ) },
+        { path: "/profile/:id?", element: <Profile /> },
+      ],
     },
-    {
-      path: "/login",
-      element: <Login />,
-    },
-    
+    { path: "/regester", element:<ProtectRout url={'/'} curent={true}><Regester /></ProtectRout> },
+    { path: "/login", element:<ProtectRout url={'/'}  curent={true}><Login /></ProtectRout>  },
   ]);
 
   return (
-      <RouterProvider router={router} />
-  )
+    <RouterProvider router={router} />
+      
+  );
+
 }
 
 export default App

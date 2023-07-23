@@ -14,7 +14,7 @@ const RightItem = () => {
     h1:'sm:text-2xl',
     h2:'',
     m_small_no:'hidden sm:flex',
-    m_small_yes:'sm:flex hidden',
+    m_small_yes:'p-0 flex flex-col items-end',
   }
   return (
     <div className='flex gap-2 justify-between items-center w-3/10 '>
@@ -28,9 +28,9 @@ const RightItem = () => {
             <li className={`${fontSize.m_small_yes}`}>
                 <AiOutlineAlert className={`${fontSize.icons}`}/>
             </li>
-            <li className='text-xl w-7 h-7 sm:hidden flex items-center justify-center bg-slate-200 rounded-full'>
+            {/*<li className='text-xl w-7 h-7 sm:hidden flex items-center justify-center bg-slate-200 rounded-full'>
             <AiOutlineMenu className={`${fontSize.icons}`}/>
-          </li>
+          </li>*/}
         </ul>
         <ProfileBtn img='http://localhost:5173/images/man.jpg'/>
     </div>

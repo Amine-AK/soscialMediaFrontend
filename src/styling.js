@@ -22,3 +22,8 @@ export const dark_sideBare= `dark:text-white dark:bg-gray-900 bg-white`
 export const dark_RsideBare= `dark:text-white dark:bg-gray-900 bg-white`
 export const dark_icons   = `bg-slate-200`
 export const dark_logo    = ``
+
+export const bodyStyle = ()=>{
+    const setId = document.body.className == 'dark'? 'darkBody':'lightBody'
+    document.body.id = setId
+}

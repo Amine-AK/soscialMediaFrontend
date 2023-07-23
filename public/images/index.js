@@ -10,6 +10,8 @@ import p_10 from './10.png'
 import p_11 from './11.png'
 import p_12 from './12.png'
 import p_13 from './13.png'
+import convertImg from './convert.jpg'
+
 
 export {
     

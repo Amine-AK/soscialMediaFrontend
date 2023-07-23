@@ -6,6 +6,7 @@ import {AiOutlineShareAlt,AiOutlineComment} from 'react-icons/ai'
 import {dark_posts} from '../../styling'
 
 
+
 type Data = {
     id:number,
     poster:string,
@@ -23,8 +24,6 @@ const Poste = ({data}:Data) => {
     if (data.img) {
         postImage = <img className={imageStyle} src={data.img} alt={`${data.id} ${data.poster}`}/>
     }
-    console.log(data)
-
 
   return (
     <div className={`min-h-max w-full px-2 pt-3 rounded-lg ${dark_posts}`}>

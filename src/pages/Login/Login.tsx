@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useRef,SyntheticEvent, ReactNode, useContext, useState  } from 'react'
 import {input,FormContainer,HelloDear,RegesterBtn,loginBtn,formStyle,HelloDearBg} from '../../styling'
 import { Link } from 'react-router-dom'
 
-
 const Login = () => {
+  const userRef = useRef<HTMLInputElement>(null)
+  const passRef = useRef<HTMLInputElement>(null)
+
   return (
     <div className={FormContainer}>
       <div className="w-1/2 h-[400px] relative">
@@ -27,9 +29,9 @@ const Login = () => {
         </div>
         <div>
           <form className='flex flex-col gap-4 text-black' action="">
-            <input className={input} type="text" />
-            <input className={input} type="password" name="" id="" />
-            <button className={RegesterBtn} type="submit">Login</button>
+            <input ref={userRef} className={input} type="text" />
+            <input ref={passRef} className={input} type="password" name="" id="" />
+            <button className={RegesterBtn}  type="submit">Login</button>
           </form>
         </div>
       </div>
