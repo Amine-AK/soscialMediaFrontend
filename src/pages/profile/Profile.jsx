@@ -19,7 +19,7 @@ const Profile = () => {
     img:'http://localhost:5173/images/man.jpg',
   }
   return (
-    <div className='relative md:w-4/5 w-full h-[330px] max-md:h-[220px] max-md:mx-2 mx-auto mb-3 flex flex-col gap-1 pb-[200px]'>
+    <div className='relative md:w-4/5 w-full h-[330px] max-xl:h-[220px] max-md:mx-2 mx-auto mb-3 flex flex-col gap-1 pb-[200px]'>
       <div id='Pheader' className='flex flex-col items-center justify-center'>
         <div id='convertImage' className='h-[330px] max-xl:h-[220px] w-full'>
           <img className='w-full h-full' src="./images/convert.jpg" alt="" />

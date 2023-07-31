@@ -9,7 +9,7 @@ const Home = () => {
     id:1,
     poster:'poster Name',
     postTexe:'hbfidnb evdionemnf dn em nbqwnf c  wdvd en jmds w bd ewm nbef fdkbn window f ewdvkdcnkqw d v fnb dlnq ckb',
-    img:'http://localhost:5173/images/man.jpg',
+    img:'https://picsum.photos/200/300?random',
   }
 
 

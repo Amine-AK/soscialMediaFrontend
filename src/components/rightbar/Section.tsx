@@ -11,7 +11,7 @@ type Props = {
 const Section = ({children,styleClass,title}:Props) => {
     console.log
   return (
-    <div className={`${dark_RsideBare} w-full rounded-md px-2 pb-5 ${styleClass?.main}`}>
+    <div className={`${dark_RsideBare} w-full rounded-md px-2 pb-5 ${styleClass}`}>
         <h2 className='text-sm font-bold text-gray-400'>
             {title}
         </h2><br/>
